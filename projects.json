@@ -209,8 +209,8 @@
       "skills": ["Full-stack engineering", "Production deploy", "Frontend / motion"],
       "role": "Built the entire site, the booking funnel and the Firebase deployment.",
       "proof": ["Live in production", "Resilient booking with timeout + WhatsApp fallback", "Locked-down Firestore security rules"],
-      "status": "case-study",
-      "links": { "case_study": "/case/vibesclean" },
+      "status": "live",
+      "links": { "live": "https://vibesclean.web.app/", "case_study": "/case/vibesclean" },
       "accent": "#f472b6"
     },
     {
