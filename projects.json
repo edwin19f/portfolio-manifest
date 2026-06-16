@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "owner": "Edwin",
+  "githubUser": "edwin19f",
+  "headline": "Edwin — Agentic AI Engineer",
+  "subheadline": "I build production AI systems: multi-agent orchestration, MCP, RAG, voice and autonomous agents. Scroll to travel through the brain behind them.",
+  "projects": [
+    {
+      "slug": "corpchat",
+      "order": 1,
+      "title": "CorpChat — Multi-Tenant Agentic SaaS",
+      "tagline": "Production B2B platform where every company runs its own AI agent over MCP.",
+      "brainRegion": "Prefrontal Cortex",
+      "problem": "Businesses needed one AI agent that could chat with customers, book meetings, send email and capture leads across each company's own tools — securely and isolated per tenant.",
+      "architecture": [
+        "Google ADK orchestrator with per-tenant subagents (gmail, calendar, zoom, hubspot, scraper)",
+        "7 MCP stdio servers expose external tools to the agent (Model Context Protocol)",
+        "Retell AI voice agent calls the backend over webhooks for phone conversations",
+        "Supabase Postgres with Row-Level Security; Fernet-encrypted OAuth tokens",
+        "Deployed on Google Cloud Run (australia-southeast1)"
+      ],
+      "stack": ["FastAPI", "Google ADK", "Gemini 3.x", "MCP", "Supabase", "Retell AI", "Cloud Run", "React 19"],
+      "skills": ["Agent orchestration", "MCP", "RAG", "Multimodal (voice)", "Guardrails & security", "MLOps / deploy", "Cost optimization"],
+      "role": "Designed and built the full multi-tenant agent backend, the MCP servers, the voice integration and the security model.",
+      "proof": ["Live in production", "Per-tenant isolation with RLS + Fernet token encryption", "Model-per-role cost control (flash for tools, pro for orchestration)"],
+      "status": "case-study",
+      "links": { "case_study": "/case/corpchat" },
+      "accent": "#5eead4"
+    },
+    {
+      "slug": "hermes-openclaw",
+      "order": 2,
+      "title": "Hermes × OpenClaw — Brain/Body Multi-Agent Lab",
+      "tagline": "A two-agent architecture that splits reasoning (brain) from execution (body), talking over an atomic file bus.",
+      "brainRegion": "Corpus Callosum",
+      "problem": "Explore a resilient multi-agent design where a fast 'body' agent handles I/O and a deep 'brain' agent handles reasoning and persistent memory — without coupling them in memory.",
+      "architecture": [
+        "OpenClaw (body) routes channels and dispatches mechanical tasks",
+        "Hermes (brain) holds SQLite long-term memory, self-improving skills and an audit log",
+        "Async communication via an atomic file bus (inbox -> processing -> done)",
+        "Telegram channel backend with a strict chat-id security gate",
+        "85+ tests including an end-to-end run with a real Gemini call"
+      ],
+      "stack": ["Python", "Gemini", "SQLite", "Telegram API", "WSL2", "pytest"],
+      "skills": ["Agent orchestration", "Multi-agent systems", "Agent memory", "Guardrails & security", "Eval / testing"],
+      "role": "Architected the brain/body split, the atomic handoff protocol and the conflict-resolution model (single source of truth per domain).",
+      "proof": ["85+/85+ tests green", "Atomic, crash-safe task bus", "Documented resolution of 14 potential cross-agent conflicts"],
+      "status": "case-study",
+      "links": { "case_study": "/case/hermes-openclaw" },
+      "accent": "#a78bfa"
+    },
+    {
+      "slug": "whisper-study-hub",
+      "order": 3,
+      "title": "Study Hub — Live Audio to Structured Knowledge",
+      "tagline": "Captures live class audio, transcribes it on-GPU and turns it into structured notes and actionable tasks.",
+      "brainRegion": "Auditory Cortex",
+      "problem": "Turn hours of live lectures (Zoom/YouTube) into structured, searchable knowledge and auto-extract research tasks — fully local and private.",
+      "architecture": [
+        "WASAPI loopback capture -> faster-whisper large-v3 on GPU (RTX 4070 Ti Super)",
+        "Gemini 2.5 Pro structures transcripts into typed notes (schema mode)",
+        "A single session_id contract unifies audio, YouTube and PDF ingestion",
+        "React SPA + FastAPI + WebSocket live transcript; Streamlit fallback",
+        "Auto-extracted tasks executed by a pluggable skills system"
+      ],
+      "stack": ["faster-whisper", "Gemini 2.5 Pro", "FastAPI", "React", "WebSocket", "CUDA"],
+      "skills": ["Multimodal (audio / STT)", "RAG / data pipelines", "Agent skills", "Eval / testing"],
+      "role": "Built the full real-time audio pipeline, the structuring agent and the skills / task-extraction system.",
+      "proof": ["Real-time GPU transcription", "One session_id contract for three input types", "Local-first, private by design"],
+      "status": "case-study",
+      "links": { "case_study": "/case/whisper-study-hub" },
+      "accent": "#22d3ee"
+    },
+    {
+      "slug": "linkedin-agent",
+      "order": 4,
+      "title": "LinkedIn AI Agent — Autonomous, Human-in-the-Loop",
+      "tagline": "Generates posts from GitHub activity, ranks jobs and drafts tailored CVs — nothing ships without a Telegram tap.",
+      "brainRegion": "Broca's Area",
+      "problem": "Automate a LinkedIn presence (posts, job hunting, networking) without ever losing human control or risking the account.",
+      "architecture": [
+        "Hexagonal architecture: core (portable skills) / adapters / runner",
+        "Skill contract run(task, ctx) -> dict, identical across projects (migration-ready)",
+        "Gemini drafts; approvals via Telegram inline keyboards; APScheduler cron",
+        "Secure TLS via the OS trust store (truststore), never verify=False",
+        "67/67 tests green"
+      ],
+      "stack": ["Python", "Gemini", "python-telegram-bot", "APScheduler", "uv", "pytest"],
+      "skills": ["Agent orchestration", "Automation", "Clean / hexagonal architecture", "Guardrails & security", "Eval / testing"],
+      "role": "Designed the 3-layer portable architecture and the strict human-in-the-loop approval flow.",
+      "proof": ["67/67 tests green", "Zero auto-publish — every action gated by Telegram", "Portable skill contract reused across projects"],
+      "status": "case-study",
+      "links": { "case_study": "/case/linkedin-agent" },
+      "accent": "#34d399"
+    },
+    {
+      "slug": "a2a-schedule",
+      "order": 5,
+      "title": "A2A Multi-Framework Scheduling",
+      "tagline": "A host agent orchestrates 'friend' agents built in different frameworks to schedule a meeting — over Google's A2A protocol.",
+      "brainRegion": "Nervous System",
+      "problem": "Show that agents written in different frameworks (ADK, LangGraph, CrewAI) can interoperate and negotiate using the Agent-to-Agent protocol.",
+      "architecture": [
+        "Host agent (ADK) coordinates the conversation",
+        "Friend agents implemented in ADK, LangGraph and CrewAI",
+        "Communication over the open A2A SDK protocol",
+        "Each agent is a self-contained service with its own dependencies"
+      ],
+      "stack": ["Google A2A SDK", "Google ADK", "LangGraph", "CrewAI", "Python"],
+      "skills": ["Multi-agent systems", "Agent orchestration", "Interoperability (A2A)"],
+      "role": "Implemented the host orchestration and the cross-framework friend agents.",
+      "proof": ["Three frameworks interoperating via one protocol", "Reference implementation of Google A2A"],
+      "status": "case-study",
+      "links": { "case_study": "/case/a2a-schedule" },
+      "accent": "#60a5fa"
+    },
+    {
+      "slug": "ai-capabilities-lab",
+      "order": 6,
+      "title": "AI Capabilities Lab — RAG, Voice, TTS & Translation",
+      "tagline": "A multimodal sandbox: Vertex RAG agents, an ADK voice calendar assistant, a TTS model and live translation.",
+      "brainRegion": "Thalamus",
+      "problem": "Build hands-on fluency across the full multimodal stack recruiters ask for in 2026.",
+      "architecture": [
+        "RAG agent on Vertex AI with grounded retrieval",
+        "ADK voice assistant wired to Google Calendar",
+        "Dia text-to-speech model for audio generation",
+        "Real-time speech translation pipeline"
+      ],
+      "stack": ["Google ADK", "Vertex AI", "Gemini", "Dia TTS", "Gradio", "Python"],
+      "skills": ["RAG / vector DBs", "Multimodal (voice / TTS)", "Translation", "Agent orchestration"],
+      "role": "Built and integrated each capability as a standalone, composable demo.",
+      "proof": ["Covers RAG + STT + TTS + translation", "Built on Google ADK + Vertex AI"],
+      "status": "case-study",
+      "links": { "case_study": "/case/ai-capabilities-lab" },
+      "accent": "#fbbf24"
+    },
+    {
+      "slug": "vibesclean",
+      "order": 7,
+      "title": "Vibesclean — Production Booking Funnel",
+      "tagline": "Marketing site + QR-driven booking flow for a Sydney business, on Firebase.",
+      "brainRegion": "Visual Cortex",
+      "problem": "A real business needed a fast marketing site with a frictionless booking funnel and reliable lead capture.",
+      "architecture": [
+        "React + TypeScript + Vite, Tailwind v4",
+        "5-step booking state machine writing to Firestore (locked-down rules)",
+        "Fire-and-forget email notification with a 15s timeout fallback to WhatsApp",
+        "Framer Motion + GSAP animations, HLS video hero",
+        "Firebase Hosting (SPA)"
+      ],
+      "stack": ["React", "TypeScript", "Vite", "Tailwind v4", "Firebase", "Firestore", "GSAP"],
+      "skills": ["Full-stack engineering", "Production deploy", "Frontend / motion"],
+      "role": "Built the entire site, the booking funnel and the Firebase deployment.",
+      "proof": ["Live in production", "Resilient booking with timeout + WhatsApp fallback", "Locked-down Firestore security rules"],
+      "status": "case-study",
+      "links": { "case_study": "/case/vibesclean" },
+      "accent": "#f472b6"
+    },
+    {
+      "slug": "welby",
+      "order": 8,
+      "title": "Welby — Live Commercial Product",
+      "tagline": "React front-end + Python backend powering welby.com.au.",
+      "brainRegion": "Motor Cortex",
+      "problem": "Ship and operate a live commercial web product end to end.",
+      "architecture": [
+        "React front-end",
+        "Python backend (API)",
+        "Deployed and serving real users at welby.com.au"
+      ],
+      "stack": ["React", "Python", "REST API"],
+      "skills": ["Full-stack engineering", "Production deploy"],
+      "role": "Contributed across front-end and backend for the live product.",
+      "proof": ["Live at welby.com.au"],
+      "status": "live",
+      "links": { "live": "https://welby.com.au", "case_study": "/case/welby" },
+      "accent": "#fb923c"
+    },
+    {
+      "slug": "chanblock",
+      "order": 9,
+      "title": "Chanblock — On-Chain Mempool Intelligence",
+      "tagline": "Analyzed Bitcoin & Ethereum chains and their mempools to anticipate incoming transactions and time investments.",
+      "brainRegion": "Hippocampus",
+      "problem": "Read each chain's mempool to surface pending / future transactions and infer where capital was about to move, to inform investment timing.",
+      "architecture": [
+        "Bitcoin and Ethereum chain + mempool analysis",
+        "Pending-transaction inspection to anticipate near-future flows",
+        "Signal generation for investment timing"
+      ],
+      "stack": ["Bitcoin", "Ethereum", "Mempool analysis", "Python"],
+      "skills": ["Data analysis", "On-chain analytics"],
+      "role": "Prototyped the mempool analysis and the signal logic.",
+      "proof": ["Domain: chanblock.com", "Archived prototype — described from memory, not re-analyzed"],
+      "status": "archived",
+      "links": {},
+      "accent": "#94a3b8"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+name: Validate manifest
+
+on:
+  push:
+    paths:
+      - "projects.json"
+      - "schema.json"
+      - ".github/workflows/validate.yml"
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Validate projects.json against schema.json
+        run: npx --yes ajv-cli@5 validate -s schema.json -d projects.json --strict=false
