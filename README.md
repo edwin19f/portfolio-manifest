@@ -16,11 +16,15 @@ can read but not change anything.
 ## Fields
 
 See `schema.json`. Required per project: `slug`, `order`, `title`, `tagline`, `brainRegion`,
-`problem`, `architecture[]`, `stack[]`, `skills[]`, `role`, `status`, `accent`.
-Optional: `proof[]`, `links { live, repo, case_study }`.
+`category`, `year`, `problem`, `architecture[]`, `stack[]`, `skills[]`, `role`, `status`, `accent`.
+Optional: `icon`, `highlights[]`, `proof[]`, `links { live, repo, case_study }`.
 
+- `category`: short badge label, e.g. `"AI System Builder"`, `"AI Agent"`
+- `year`: shown next to the badge, e.g. `"2026"`
+- `icon`: animated icon — one of `brain` | `chat` | `network` | `audio` | `voice` | `web` | `data` (default `brain`)
+- `highlights[]`: 2-4 short bullets shown on the COMPACT card; the rest (`problem`, `architecture`, `skills`, `role`, `proof`) shows after the visitor clicks **More**
 - `status`: `live` | `public` | `case-study` | `archived`
-- `links.repo`: only for **public** repos (the site shows live GitHub stats for these)
+- `links.live`: live URL (shows a **Live ↗** button); `links.repo`: public GitHub repo (shows **GitHub ↗** + live stats)
 - `accent`: `#RRGGBB` hex — the section's color in the brain map
 
 ## Validate locally

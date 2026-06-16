@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "owner": "Edwin",
   "githubUser": "edwin19f",
   "headline": "Edwin — Agentic AI Engineer",
@@ -8,9 +8,17 @@
     {
       "slug": "corpchat",
       "order": 1,
-      "title": "CorpChat — Multi-Tenant Agentic SaaS",
-      "tagline": "Production B2B platform where every company runs its own AI agent over MCP.",
+      "title": "CorpChat",
+      "tagline": "Multi-tenant agentic SaaS where every company runs its own AI agent over MCP.",
       "brainRegion": "Prefrontal Cortex",
+      "category": "AI System Builder",
+      "year": "2026",
+      "icon": "brain",
+      "highlights": [
+        "Google ADK orchestrator + per-tenant subagents",
+        "7 MCP stdio servers (Model Context Protocol)",
+        "Retell AI voice agent + Cloud Run deploy"
+      ],
       "problem": "Businesses needed one AI agent that could chat with customers, book meetings, send email and capture leads across each company's own tools — securely and isolated per tenant.",
       "architecture": [
         "Google ADK orchestrator with per-tenant subagents (gmail, calendar, zoom, hubspot, scraper)",
@@ -23,16 +31,24 @@
       "skills": ["Agent orchestration", "MCP", "RAG", "Multimodal (voice)", "Guardrails & security", "MLOps / deploy", "Cost optimization"],
       "role": "Designed and built the full multi-tenant agent backend, the MCP servers, the voice integration and the security model.",
       "proof": ["Live in production", "Per-tenant isolation with RLS + Fernet token encryption", "Model-per-role cost control (flash for tools, pro for orchestration)"],
-      "status": "case-study",
-      "links": { "case_study": "/case/corpchat" },
+      "status": "live",
+      "links": { "live": "https://corp-chat-frontend-292517634668.australia-southeast1.run.app/login" },
       "accent": "#5eead4"
     },
     {
       "slug": "hermes-openclaw",
       "order": 2,
-      "title": "Hermes × OpenClaw — Brain/Body Multi-Agent Lab",
-      "tagline": "A two-agent architecture that splits reasoning (brain) from execution (body), talking over an atomic file bus.",
+      "title": "Hermes × OpenClaw",
+      "tagline": "A brain/body multi-agent lab: reasoning and execution split over an atomic file bus.",
       "brainRegion": "Corpus Callosum",
+      "category": "AI System Builder",
+      "year": "2026",
+      "icon": "network",
+      "highlights": [
+        "Brain/Body split over an atomic file bus",
+        "Self-improving skills + SQLite memory",
+        "85+ tests incl. real-Gemini end-to-end"
+      ],
       "problem": "Explore a resilient multi-agent design where a fast 'body' agent handles I/O and a deep 'brain' agent handles reasoning and persistent memory — without coupling them in memory.",
       "architecture": [
         "OpenClaw (body) routes channels and dispatches mechanical tasks",
@@ -52,9 +68,17 @@
     {
       "slug": "whisper-study-hub",
       "order": 3,
-      "title": "Study Hub — Live Audio to Structured Knowledge",
-      "tagline": "Captures live class audio, transcribes it on-GPU and turns it into structured notes and actionable tasks.",
+      "title": "Study Hub",
+      "tagline": "Live class audio captured on-GPU and turned into structured knowledge and tasks.",
       "brainRegion": "Auditory Cortex",
+      "category": "Audio AI Pipeline",
+      "year": "2026",
+      "icon": "audio",
+      "highlights": [
+        "faster-whisper large-v3 on GPU",
+        "Gemini structures notes (schema mode)",
+        "One session_id for audio / YouTube / PDF"
+      ],
       "problem": "Turn hours of live lectures (Zoom/YouTube) into structured, searchable knowledge and auto-extract research tasks — fully local and private.",
       "architecture": [
         "WASAPI loopback capture -> faster-whisper large-v3 on GPU (RTX 4070 Ti Super)",
@@ -74,9 +98,17 @@
     {
       "slug": "linkedin-agent",
       "order": 4,
-      "title": "LinkedIn AI Agent — Autonomous, Human-in-the-Loop",
-      "tagline": "Generates posts from GitHub activity, ranks jobs and drafts tailored CVs — nothing ships without a Telegram tap.",
+      "title": "LinkedIn Agent",
+      "tagline": "Autonomous LinkedIn agent with human-in-the-loop via Telegram.",
       "brainRegion": "Broca's Area",
+      "category": "AI Agent",
+      "year": "2026",
+      "icon": "chat",
+      "highlights": [
+        "3 workflows: posts, jobs, networking",
+        "Gemini job ranking + CV adaptation",
+        "Zero-publish-without-approval policy"
+      ],
       "problem": "Automate a LinkedIn presence (posts, job hunting, networking) without ever losing human control or risking the account.",
       "architecture": [
         "Hexagonal architecture: core (portable skills) / adapters / runner",
@@ -96,9 +128,17 @@
     {
       "slug": "a2a-schedule",
       "order": 5,
-      "title": "A2A Multi-Framework Scheduling",
-      "tagline": "A host agent orchestrates 'friend' agents built in different frameworks to schedule a meeting — over Google's A2A protocol.",
+      "title": "A2A Scheduling",
+      "tagline": "A host agent orchestrates agents built in different frameworks over Google's A2A protocol.",
       "brainRegion": "Nervous System",
+      "category": "Multi-Agent Systems",
+      "year": "2026",
+      "icon": "network",
+      "highlights": [
+        "Host agent orchestrates friend agents",
+        "ADK + LangGraph + CrewAI interop",
+        "Open Google A2A protocol"
+      ],
       "problem": "Show that agents written in different frameworks (ADK, LangGraph, CrewAI) can interoperate and negotiate using the Agent-to-Agent protocol.",
       "architecture": [
         "Host agent (ADK) coordinates the conversation",
@@ -117,9 +157,17 @@
     {
       "slug": "ai-capabilities-lab",
       "order": 6,
-      "title": "AI Capabilities Lab — RAG, Voice, TTS & Translation",
-      "tagline": "A multimodal sandbox: Vertex RAG agents, an ADK voice calendar assistant, a TTS model and live translation.",
+      "title": "AI Capabilities Lab",
+      "tagline": "A multimodal sandbox: RAG, voice, TTS and live translation.",
       "brainRegion": "Thalamus",
+      "category": "Multimodal AI",
+      "year": "2025",
+      "icon": "voice",
+      "highlights": [
+        "RAG agent on Vertex AI",
+        "ADK voice assistant + Google Calendar",
+        "Dia TTS + real-time translation"
+      ],
       "problem": "Build hands-on fluency across the full multimodal stack recruiters ask for in 2026.",
       "architecture": [
         "RAG agent on Vertex AI with grounded retrieval",
@@ -138,9 +186,17 @@
     {
       "slug": "vibesclean",
       "order": 7,
-      "title": "Vibesclean — Production Booking Funnel",
-      "tagline": "Marketing site + QR-driven booking flow for a Sydney business, on Firebase.",
+      "title": "Vibesclean",
+      "tagline": "Production marketing site + QR-driven booking funnel on Firebase.",
       "brainRegion": "Visual Cortex",
+      "category": "Full-Stack + AI",
+      "year": "2025",
+      "icon": "web",
+      "highlights": [
+        "React + Firebase booking funnel",
+        "Resilient 5-step state machine",
+        "Live in production"
+      ],
       "problem": "A real business needed a fast marketing site with a frictionless booking funnel and reliable lead capture.",
       "architecture": [
         "React + TypeScript + Vite, Tailwind v4",
@@ -160,9 +216,16 @@
     {
       "slug": "welby",
       "order": 8,
-      "title": "Welby — Live Commercial Product",
-      "tagline": "React front-end + Python backend powering welby.com.au.",
+      "title": "Welby",
+      "tagline": "A live commercial web product: React front-end + Python backend.",
       "brainRegion": "Motor Cortex",
+      "category": "Full-Stack Product",
+      "year": "2025",
+      "icon": "web",
+      "highlights": [
+        "React front-end + Python API",
+        "Serving real users in production"
+      ],
       "problem": "Ship and operate a live commercial web product end to end.",
       "architecture": [
         "React front-end",
@@ -174,15 +237,23 @@
       "role": "Contributed across front-end and backend for the live product.",
       "proof": ["Live at welby.com.au"],
       "status": "live",
-      "links": { "live": "https://welby.com.au", "case_study": "/case/welby" },
+      "links": { "live": "https://welby.com.au" },
       "accent": "#fb923c"
     },
     {
       "slug": "chanblock",
       "order": 9,
-      "title": "Chanblock — On-Chain Mempool Intelligence",
-      "tagline": "Analyzed Bitcoin & Ethereum chains and their mempools to anticipate incoming transactions and time investments.",
+      "title": "Chanblock",
+      "tagline": "On-chain mempool intelligence across Bitcoin & Ethereum to time investments.",
       "brainRegion": "Hippocampus",
+      "category": "On-Chain Analytics",
+      "year": "2024",
+      "icon": "data",
+      "highlights": [
+        "Bitcoin & Ethereum mempool analysis",
+        "Anticipates near-future transaction flows",
+        "Signals for investment timing"
+      ],
       "problem": "Read each chain's mempool to surface pending / future transactions and infer where capital was about to move, to inform investment timing.",
       "architecture": [
         "Bitcoin and Ethereum chain + mempool analysis",
@@ -192,9 +263,9 @@
       "stack": ["Bitcoin", "Ethereum", "Mempool analysis", "Python"],
       "skills": ["Data analysis", "On-chain analytics"],
       "role": "Prototyped the mempool analysis and the signal logic.",
-      "proof": ["Domain: chanblock.com", "Archived prototype — described from memory, not re-analyzed"],
+      "proof": ["Archived prototype — described from memory, not re-analyzed"],
       "status": "archived",
-      "links": {},
+      "links": { "live": "https://chanblock.com" },
       "accent": "#94a3b8"
     }
   ]
